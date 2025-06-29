@@ -1,0 +1,68 @@
+# .gitignore для бекенда на fastapi
+# Общие системные файлы
+.DS_Store
+*.swp
+*.swo
+*.bak
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.pickle
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Виртуальное окружение
+venv/
+.env/
+.venv/
+env/
+ENV/
+    
+# Файлы IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# Логи и временные файлы
+*.log
+*.sqlite
+*.db
+*.sql
+*.dump
+
+# Конфиденциальные данные
+.env
+.env.local
+.env.*.local
+secrets.json
+credentials.*
+*.key
+*.pem
+*.cert
+
+# Статика и сборки
+/static/
+/media/
+/dist/
+/build/
+*.min.js
+*.min.css
+
+# Тестовые данные
+/test_data/
+/tmp/
+/temp/
+
+# Документация
+/docs/_build/
+/site/
+
+# Jupyter Notebook
+*.ipynb
+
+# FastAPI-specific (если используется)
+/instance/
