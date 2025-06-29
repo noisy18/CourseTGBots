@@ -1,11 +1,10 @@
 from fastapi import FastAPI
 import uvicorn
 
-app = FastAPI()
+from api.tokens import router as token_router
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+app = FastAPI()
+app.include_router(token_router)
 
 # Тестовый запуск проекта
 if __name__ == "__main__":
