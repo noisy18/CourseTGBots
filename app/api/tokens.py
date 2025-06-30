@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 from schemas.token import TokenRequest, TokenResponse
 from utils.create_token import create_access_token
-from utils.docs.tags import TOKEN
+from utils.docs.tags import TOKENS
 from db.repositoies.token import TokenRepository
 
 # Загружаем переменные из .env
@@ -15,7 +15,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "30")
 
 router = APIRouter(
     prefix="/tokens",
-    tags=[TOKEN]
+    tags=[TOKENS]
 )
 
 repo = TokenRepository()

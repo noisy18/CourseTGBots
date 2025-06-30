@@ -1,3 +1,4 @@
 from typing import Final
 
-TOKEN: Final = "Token"
+TOKENS: Final = "Tokens"
+USERS: Final = "Users"
