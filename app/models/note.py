@@ -2,9 +2,9 @@ from sqlalchemy import Column, Integer, String
 from core.models.base import BaseModel
 from core.models.uuid import UUIDModel
 
-class User(BaseModel, UUIDModel):
-    __tablename__ = "users"
+class Note(BaseModel, UUIDModel):
+    __tablename__ = "Notes"
 
     id = Column(Integer, primary_key=True, index=True)
-    email = Column(String, unique=True, index=True, nullable=False)
-    password = Column(String, nullable=False)
+    label = Column(String, nullable=False)
+    description = Column(String, nullable=False)

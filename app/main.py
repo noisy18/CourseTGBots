@@ -4,6 +4,7 @@ import uvicorn
 
 from api.tokens import router as token_router
 from api.users import router as user_router
+from api.notes import router as notes_router
 from db.session import create_tables, delete_tables
 
 @asynccontextmanager
@@ -18,6 +19,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 app.include_router(token_router)
 app.include_router(user_router)
+app.include_router(notes_router)
 
 # Тестовый запуск проекта
 if __name__ == "__main__":

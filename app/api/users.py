@@ -5,15 +5,12 @@ from db.dependencies import get_db
 from utils.docs.tags import USERS
 from schemas.user import UserResponseSchema, UserCreateSchema
 from db.repositoies.user import UserRepository
-import logging
 
 router = APIRouter(
-    # prefix="/users",
     tags=[USERS]
 )
 
 repo = UserRepository()
-logger = logging.getLogger(__name__)
 
 @router.post("/register", response_model=UserResponseSchema)
 async def post(user_data: UserCreateSchema, db: AsyncSession = Depends(get_db)):
