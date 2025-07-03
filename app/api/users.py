@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.dependencies import get_db
-from utils.docs.tags import USERS
-from schemas.user import UserResponseSchema, UserCreateSchema
-from db.repositoies.user import UserRepository
+from app.db.dependencies import get_db
+from app.utils.docs.tags import USERS
+from app.schemas.user import UserResponseSchema, UserCreateSchema
+from app.db.repositoies.user import UserRepository
 
 router = APIRouter(
     tags=[USERS]

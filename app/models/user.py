@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String
-from core.models.base import BaseModel
-from core.models.uuid import UUIDModel
+from app.core.models.base import BaseModel
+from app.core.models.uuid import UUIDModel
 
 class User(BaseModel, UUIDModel):
     __tablename__ = "users"

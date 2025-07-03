@@ -1,6 +1,6 @@
 from sqlalchemy import Boolean, DateTime, func, Column
-from db.base import Base
-from settings import get_current_time
+from app.db.base import Base
+from app.settings import get_current_time
 
 
 class BaseModel(Base):

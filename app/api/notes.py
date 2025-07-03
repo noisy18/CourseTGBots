@@ -2,10 +2,10 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from typing import List, Dict
 
-from db.dependencies import get_db
-from utils.docs.tags import NOTES
-from schemas.note import NoteCreateSchema, NoteResponseSchema
-from db.repositoies.note import NoteRepository
+from app.db.dependencies import get_db
+from app.utils.docs.tags import NOTES
+from app.schemas.note import NoteCreateSchema, NoteResponseSchema
+from app.db.repositoies.note import NoteRepository
 
 router = APIRouter(
     prefix="/notes",

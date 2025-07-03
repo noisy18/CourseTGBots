@@ -1,7 +1,7 @@
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from models.note import Note
-from schemas.note import NoteCreateSchema
+from app.models.note import Note
+from app.schemas.note import NoteCreateSchema
 
 
 class NoteRepository:

@@ -1,7 +1,7 @@
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from models.user import User
-from schemas.user import UserCreateSchema
+from app.models.user import User
+from app.schemas.user import UserCreateSchema
 
 class UserRepository:
     async def get_user_by_id(self, db: AsyncSession, user_id: int):

@@ -1,6 +1,6 @@
 from pydantic import EmailStr, BaseModel
-from core.schemas.base import BaseSchema
-from core.schemas.uuid import UUIDSchema
+from app.core.schemas.base import BaseSchema
+from app.core.schemas.uuid import UUIDSchema
 
 class UserCreateSchema(BaseModel):
     email: EmailStr

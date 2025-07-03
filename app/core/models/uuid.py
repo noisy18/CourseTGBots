@@ -2,7 +2,7 @@ import uuid
 from sqlalchemy import Column
 from sqlalchemy.dialects.postgresql import UUID
 
-from db.base import Base
+from app.db.base import Base
 
 
 class UUIDModel(Base):
