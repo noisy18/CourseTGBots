@@ -1,10 +1,10 @@
-from sqlalchemy import Column, Integer, String
-from app.core.models.base import BaseModel
-from app.core.models.uuid import UUIDModel
+from sqlalchemy import String
+from sqlalchemy.orm import Mapped, mapped_column
 
-class User(BaseModel, UUIDModel):
+from app.db.base import Base
+
+class User(Base):
     __tablename__ = "users"
 
-    id = Column(Integer, primary_key=True, index=True)
-    email = Column(String, unique=True, index=True, nullable=False)
-    password = Column(String, nullable=False)
+    email: Mapped[str] = mapped_column(String, unique=True, index=True, nullable=False)
+    password: Mapped[str] = mapped_column(String, nullable=False)

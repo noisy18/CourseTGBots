@@ -9,3 +9,5 @@ asyncpg
 dotenv
 pydantic[email]
 pytz
+alembic
+pydantic-settings

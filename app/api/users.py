@@ -21,6 +21,7 @@ async def post(user_data: UserCreateSchema, db: AsyncSession = Depends(get_db)):
     new_user.uuid = str(new_user.uuid)
     return new_user
 
+
 @router.get("/me/{user_id}", response_model=UserResponseSchema)
 async def get(user_id: int, db: AsyncSession = Depends(get_db)):
     user = await repo.get_user_by_id(db=db, user_id=user_id)

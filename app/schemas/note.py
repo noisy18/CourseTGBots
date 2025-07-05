@@ -1,13 +1,11 @@
 from pydantic import BaseModel
-from app.core.schemas.base import BaseSchema
-from app.core.schemas.uuid import UUIDSchema
+from app.schemas.base import BaseSchema
 
 class NoteCreateSchema(BaseModel):
     label: str
     description: str
 
-class NoteResponseSchema(BaseSchema, UUIDSchema):
-    id: int
+class NoteResponseSchema(BaseSchema):
     label: str
     description: str
 

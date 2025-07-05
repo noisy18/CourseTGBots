@@ -1,30 +1,21 @@
-from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from sqlalchemy.pool import NullPool
-from app.core.models.base import Base
-from app.db.database import DATABASE_URL
+
+from app.config import get_settings
+
+settings = get_settings()
+database_url = str(settings.DATABASE_URL)
 
 engine = create_async_engine(
-    DATABASE_URL,
+    database_url,
     echo=True,
     poolclass=NullPool
 )
 
-AsyncSessionLocal = sessionmaker(
+async_session_local = async_sessionmaker(
     bind=engine,
     class_=AsyncSession,
     expire_on_commit=False,
     autocommit=False,
     autoflush=False
 )
-
-async def create_tables():
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
-
-async def delete_tables():
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.drop_all)
-
-async def close_engine():
-    await engine.dispose()

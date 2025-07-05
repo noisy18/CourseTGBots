@@ -24,7 +24,8 @@ repo = TokenRepository()
 async def post(token_request: TokenRequest) -> TokenResponse:
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(data={"sub": token_request.email}, expires_delta=access_token_expires)
-    return {"access_token": access_token, "token_type": "bearer"}
+    return {"access_token": access_token, "token_type": "Bearer"}
+
 
 @router.get("", summary="Get token by email")
 async def get(email: str = Depends(repo.get_current_email)):

@@ -1,10 +1,10 @@
-from sqlalchemy import Column, Integer, String
-from app.core.models.base import BaseModel
-from app.core.models.uuid import UUIDModel
+from sqlalchemy import String
+from sqlalchemy.orm import Mapped, mapped_column
 
-class Note(BaseModel, UUIDModel):
+from app.db.base import Base
+
+class Note(Base):
     __tablename__ = "Notes"
 
-    id = Column(Integer, primary_key=True, index=True)
-    label = Column(String, nullable=False)
-    description = Column(String, nullable=False)
+    ladel: Mapped[str] = mapped_column(String, nullable=False)
+    description: Mapped[str] = mapped_column(String, nullable=False)
