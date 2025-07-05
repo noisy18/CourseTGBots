@@ -6,5 +6,5 @@ from app.db.base import Base
 class Note(Base):
     __tablename__ = "Notes"
 
-    ladel: Mapped[str] = mapped_column(String, nullable=False)
+    label: Mapped[str] = mapped_column(String, nullable=False)
     description: Mapped[str] = mapped_column(String, nullable=False)

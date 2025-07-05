@@ -1,9 +1,9 @@
 from app.db.session import async_session_local
-from sqlalchemy.ext.asyncio import AsyncSession
+from app.db.db_manager import DB
 
-async def get_db() -> AsyncSession:
+async def get_db() -> DB:
     async with async_session_local() as session:
         try:
-            yield session
+            yield DB(session)
         finally:
             await session.close()
